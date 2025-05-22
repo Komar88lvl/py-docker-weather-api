@@ -1,13 +1,19 @@
 FROM python:3.12-slim
 LABEL maintainer="djsv91@gmail.com"
 
-ENV PYTHOUNNBUFFERED 1
+ENV PYTHONUNBUFFERED 1
 
-WORKDIR app/
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip
+
+WORKDIR /app
+
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY app/ .
 
-CMD ["python", "app/main.py"]
+CMD ["python", "main.py"]

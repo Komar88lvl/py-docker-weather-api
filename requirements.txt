@@ -11,6 +11,9 @@ mccabe==0.7.0
 pep8-naming==0.13.2
 pycodestyle==2.9.1
 pyflakes==2.5.0
+python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 requests==2.32.3
+six==1.17.0
 urllib3==2.4.0
+weatherapipython @ git+https://github.com/weatherapicom/python.git@05344f2d04cbf0b9513cb69b71f56a66a348e1be
